@@ -1,5 +1,3 @@
-//git remote add origin git@github.com:ToMoon7/juejin-sign.git
-
 const nodeMailer = require("nodemailer");
 const axios = require("axios");
 
