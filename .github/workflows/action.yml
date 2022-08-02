@@ -1,0 +1,21 @@
+name: BaseRun
+
+# 环境变量
+env:
+  EMAIL: ${{ secrets.EMAIL }}
+  EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  base-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+      - run: npm install
+      - run: npm start
