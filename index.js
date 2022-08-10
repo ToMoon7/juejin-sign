@@ -110,7 +110,9 @@ const sendEmail = async (subject, html) => {
     let checkRes = await checkIn();
     let drawRes = await draw();
     await sendEmail("掘金签到", checkRes + "<br>" + drawRes);
+    console.log("签到成功", checkRes, drawRes);
   } catch (error) {
     await sendEmail("今日掘金签到：失败", error);
+    console.log("签到失败", error);
   }
 })();
