@@ -1,16 +1,18 @@
-name: BaseRun
+name: JueJinSign
 
 # 环境变量
 env:
   EMAIL: ${{ secrets.EMAIL }}
   EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+  TO_EMAIL: ${{ secrets.TO_EMAIL }}
+  COOKIE: ${{ secrets.COOKIE }}
 
 on:
   schedule:
     - cron: "0 0 * * *"
 
 jobs:
-  base-run:
+  juein-sign:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
