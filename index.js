@@ -20,7 +20,10 @@ const config = {
     },
   },
 };
-
+console.log('----------');
+console.log(config);
+console.log(process.env);
+console.log('----------');
 // 签到
 const checkIn = async () => {
   let { error, isCheck } = await getTodayCheckStatus();
