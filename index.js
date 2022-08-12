@@ -20,10 +20,10 @@ const config = {
     },
   },
 };
-console.log('----------');
+console.log("----------");
 console.log(config);
 console.log(process.env);
-console.log('----------');
+console.log("----------");
 // 签到
 const checkIn = async () => {
   let { error, isCheck } = await getTodayCheckStatus();
@@ -36,9 +36,9 @@ const checkIn = async () => {
     headers: { Cookie: cookie },
   });
   if (data.err_no) {
-    return "今日掘金签到：失败", JSON.stringify(data);
+    return "今日掘金签到：失败" + JSON.stringify(data);
   } else {
-    return "今日掘金签到：成功", JSON.stringify(data);
+    return `今日掘金签到：成功，本次签到${data.data.incr_point}, 余额：${data.data.sum_point}`;
   }
 };
 
